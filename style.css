@@ -1,90 +1,63 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: bisque;
-    text-align: center;
-    margin: 0;
-    padding: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 20px;
 }
 
-.navbar {
-    background-color: #f85959;
-    padding: 10px 0;
+/* Image Gallery */
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 50px;
 }
 
-.navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    justify-content: center;
+.gallery img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.navbar li {
-    margin: 0 20px;
+.gallery img:hover {
+  transform: scale(1.2);
 }
 
-.navbar a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    transition: color 0.3 ease;
+/* Slideshow */
+.slideshow {
+  width: 50%;
+  max-width: 350px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-.navbar a:hover {
-    color: #3700fc;
+.slides {
+  display: flex;
+  width: 120%;
+  animation: slide 12s infinite;
 }
 
-.form-container {
-    background: cornflowerblue;
-    padding: 20px 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(168, 184, 23, 0.2);
-    text-align: center;
+.slides img {
+  width: 95%;
+  flex-shrink: 0;
 }
 
-h1 {
-    color:#ff0303;
-}
-
-h2 {
-    margin-bottom: 20px;
-    text-align: middle;
-    color: rgb(255, 0, 76);
-}
-
-h3 {
-    color: #e134eb;
-}
-
-img {
-    margin-top: 20px;
-    width: 400px;
-    border-radius: 10px;
-    box-shadow: 0 4px 4px rgba(red, green, blue, alpha);
-}
-
-p {
-    font-size: 18px;
-    color: #1c03ff;
-}
-
-input {
-    padding: 10px;
-    width: 200px;
-    border:1px snow #ccc;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    font-size: 16px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
+/* Keyframes for slideshow */
+@keyframes slide {
+  0%   { transform: translateX(0); }
+  20%  { transform: translateX(0); }
+  25%  { transform: translateX(-100%); }
+  45%  { transform: translateX(-100%); }
+  50%  { transform: translateX(-200%); }
+  70%  { transform: translateX(-200%); }
+  75%  { transform: translateX(-300%); }
+  95%  { transform: translateX(-300%); }
+  100% { transform: translateX(0); }
 }
