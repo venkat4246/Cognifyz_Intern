@@ -1,63 +1,99 @@
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
-  text-align: center;
-  background: #f4f4f4;
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+  text-align: center;
 }
 
-/* Image Gallery */
-.gallery {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-bottom: 50px;
+h1, h2 {
+  color: #222;
 }
 
-.gallery img {
-  width: 150px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+/* Header */
+header {
+  background: linear-gradient(135deg, #0073e6, #00c6ff);
+  color: white;
+  padding: 60px 20px;
 }
 
-.gallery img:hover {
-  transform: scale(1.2);
+header span {
+  color: #ffeb3b;
 }
 
-/* Slideshow */
-.slideshow {
-  width: 50%;
-  max-width: 350px;
+header p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* Sections */
+section {
+  padding: 40px 20px;
+  max-width: 900px;
   margin: auto;
-  overflow: hidden;
-  border-radius: 30px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-.slides {
-  display: flex;
-  width: 120%;
-  animation: slide 12s infinite;
+.intro p {
+  font-size: 18px;
+  color: #444;
 }
 
-.slides img {
-  width: 95%;
-  flex-shrink: 0;
+.highlights ul, .qualifications ul {
+  list-style: none;
+  padding: 0;
+  font-size: 18px;
 }
 
-/* Keyframes for slideshow */
-@keyframes slide {
-  0%   { transform: translateX(0); }
-  20%  { transform: translateX(0); }
-  25%  { transform: translateX(-100%); }
-  45%  { transform: translateX(-100%); }
-  50%  { transform: translateX(-200%); }
-  70%  { transform: translateX(-200%); }
-  75%  { transform: translateX(-300%); }
-  95%  { transform: translateX(-300%); }
-  100% { transform: translateX(0); }
+.highlights li, .qualifications li {
+  margin: 10px 0;
+  background: #e3f2fd;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+/* Call-to-Action */
+.cta {
+  background: #0073e6;
+  color: white;
+  padding: 50px 20px;
+  border-radius: 10px;
+}
+
+.cta h2 {
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 25px;
+  font-size: 18px;
+  color: white;
+  background: #ff5722;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #e64a19;
+}
+
+.btn.secondary {
+  background: #4caf50;
+}
+
+.btn.secondary:hover {
+  background: #388e3c;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: white;
+  padding: 20px;
+  margin-top: 40px;
 }
