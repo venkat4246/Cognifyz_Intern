@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Mini Projects</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6f9;
+      color: #333;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background: #2c3e50;
+      padding: 15px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #f39c12;
+    }
+
+    /* Page Heading */
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(to right, #3498db, #9b59b6);
+      color: white;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+    header p {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    /* Section Cards */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h2 {
+      margin-bottom: 15px;
+      color: #2c3e50;
+    }
+
+    /* Buttons */
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 6px;
+      background: #3498db;
+      color: white;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+
+    /* Input & Result */
+    input {
+      padding: 10px;
+      margin: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      width: 80%;
+      max-width: 250px;
+    }
+    #result {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #16a085;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #2c3e50;
+      color: white;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#color">Color Button</a>
+    <a href="#greeting">Greeting</a>
+    <a href="#calculator">Calculator</a>
+  </nav>
+
+  <!-- Heading -->
+  <header>
+    <h1>JavaScript Mini Projects</h1>
+    <p>Practice simple interactive features with HTML, CSS, and JavaScript</p>
+  </header>
+
+  <!-- Content -->
+  <div class="container">
+
+    <!-- 1. Button Color Change -->
+    <div class="card" id="color">
+      <h2>1. Button Color Change</h2>
+      <button id="colorBtn">Click Me</button>
+    </div>
+
+    <!-- 2. Greeting Message -->
+    <div class="card" id="greeting">
+      <h2>2. Greeting Message</h2>
+      <button onclick="showGreeting()">Show Greeting</button>
+    </div>
+
+    <!-- 3. Calculator -->
+    <div class="card" id="calculator">
+      <h2>3. Basic Calculator</h2>
+      <input type="number" id="num1" placeholder="Enter first number">
+      <input type="number" id="num2" placeholder="Enter second number"><br>
+      <button onclick="addNumbers()">Add</button>
+      <p id="result"></p>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 JavaScript Practice | Designed with ❤️
+  </footer>
+
+  <script>
+    // 1. Button Color Change
+    const btn = document.getElementById("colorBtn");
+    const colors = ["#e74c3c", "#3498db", "#2ecc71", "#f39c12", "#9b59b6"];
+    let index = 0;
+    btn.addEventListener("click", function() {
+      btn.style.backgroundColor = colors[index];
+      index = (index + 1) % colors.length;
+    });
+
+    // 2. Greeting Message
+    function showGreeting() {
+      let hour = new Date().getHours();
+      let message = "";
+      if (hour < 12) {
+        message = "Good Morning!";
+      } else if (hour < 18) {
+        message = "Good Afternoon!";
+      } else {
+        message = "Good Evening!";
+      }
+      alert(message);
+    }
+
+    // 3. Basic Calculator
+    function addNumbers() {
+      let n1 = parseFloat(document.getElementById("num1").value);
+      let n2 = parseFloat(document.getElementById("num2").value);
+      if (isNaN(n1) || isNaN(n2)) {
+        document.getElementById("result").innerText = "⚠️ Please enter valid numbers!";
+      } else {
+        let sum = n1 + n2;
+        document.getElementById("result").innerText = "Result: " + sum;
+      }
+    }
+  </script>
+
+</body>
+</html>
